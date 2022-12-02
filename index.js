@@ -95,7 +95,7 @@ const nav1=document.querySelector('.childnodes')
 // console.log(nav1.parentNode);
 // console.log(nav1.parentElement);
 
-//modift elements content
+//modify elements content
 const p=document.querySelector('#modify')
 console.log(p.textContent);
 console.log(p.innerText);

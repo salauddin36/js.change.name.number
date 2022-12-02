@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS modifying</title>
+    <link rel="icon" href="./img/icon.png" type="image/png">
+    <style>
+        body {
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+        //increment and decrement onclick
+        function increment() {
+            const currentCountElement = document.querySelector('h1');
+            const currentCount = Number(currentCountElement.innerText);
+            const updatedCount = currentCount + 1;
+            currentCountElement.innerText = updatedCount;
+            if (updatedCount % 5 == 0 && updatedCount != 0) {
+                currentCountElement.style.color = "red"
+            }
+            else {
+                currentCountElement.style.color = ""
+            }
+        }
+        function decrement() {
+            const currentCountElement = document.querySelector('h1');
+            const currentCount = Number(currentCountElement.innerText);
+            const updatedCount = currentCount - 1;
+            currentCountElement.innerText = updatedCount;
+            if (updatedCount % 5 == 0 && updatedCount != 0) {
+                currentCountElement.style.color = "red"
+            }
+            else {
+                currentCountElement.style.color = ""
+            }
+        }
+
+        // creating elements
+        const body = document.querySelector("body")
+        const count = document.createElement("h1")
+        count.innerText = 0;
+        body.appendChild(count)
+
+        //creating buttons
+        const incrementButtom = document.createElement('button')
+        incrementButtom.innerText = 'Increment'
+        incrementButtom.setAttribute('onclick', 'increment()')
+        body.appendChild(incrementButtom)
+
+        const decrementButtom = document.createElement('button')
+        decrementButtom.innerText = 'Decrement'
+        decrementButtom.setAttribute('onclick', 'decrement()')
+        body.appendChild(decrementButtom)
+
+
+        //addEventListner
+        const incrementButtom2 = document.createElement('button')
+        incrementButtom2.innerText = 'Increment-2'
+        // incrementButtom.setAttribute('onclick','increment()')
+        body.appendChild(incrementButtom2)
+        incrementButtom2.addEventListener('mouseout', increment)  //no brackets of function when using addEventListener
+    </script>
+
+
+</body>
+
+</html>
